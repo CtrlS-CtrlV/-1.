@@ -1,0 +1,12 @@
+Компіляція та копіювання програми у системну директорію
+gcc -Wall -Wextra -O2 -o resource_daemon resource_daemon.c
+sudo cp resource_daemon /usr/local/bin/
+
+Перезавантаження конфігурації systemd, увімкнення та запуск
+sudo systemctl daemon-reload
+sudo systemctl enable resource_monitor.service
+sudo systemctl start resource_monitor.service
+
+Перевірка статусу та перегляд логів
+sudo systemctl status resource_monitor.service
+tail -f /var/log/resource_monitor.log
