@@ -1,0 +1,12 @@
+[Unit]
+Description=Unix/Linux Resource Monitor Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/resource_daemon
+Restart=on-failure
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
